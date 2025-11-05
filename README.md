@@ -1,4 +1,6 @@
-# WEATHER + AQI CLI app
+# WEATHER + AQI CLI App
+
+---
 
 It includes:
 * Fancy dashboard-style terminal UI with emojis and ANSI colors
