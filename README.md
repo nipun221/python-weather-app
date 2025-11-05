@@ -1,4 +1,4 @@
-# WEATHER + AQI CLI App
+# WEATHER + AQI CLI APP
 
 ---
 
