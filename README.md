@@ -54,4 +54,6 @@ python main.py
 
 ---
 
+## Screenshot with demo
 
+<img width="921" height="536" alt="image" src="https://github.com/user-attachments/assets/0c6a529b-46d7-4357-8ea6-d39900262be8" />
