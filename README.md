@@ -57,3 +57,5 @@ python main.py
 ## Screenshot with demo
 
 <img width="921" height="536" alt="image" src="https://github.com/user-attachments/assets/0c6a529b-46d7-4357-8ea6-d39900262be8" />
+<img width="913" height="500" alt="image" src="https://github.com/user-attachments/assets/1c866924-6338-42ce-8587-0b1bb74f4242" />
+
