@@ -33,7 +33,6 @@ def test_get_aqi(mock_get):
     aqi = get_aqi(47.37, 8.55, "DUMMY_KEY")
     assert aqi == 2
 
-
 def test_aqi_meaning_labels():
     assert aqi_meaning[1] == "Good"
     assert aqi_meaning[2] == "Fair"

@@ -10,7 +10,6 @@ def get_city_from_ip():
         print(f"Error getting city from IP: {e}")
         return None
 
-
 def get_weather(city, api_key):
     """Returns weather json for a city"""
     url = f"https://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}&units=metric"
@@ -22,7 +21,6 @@ def get_aqi(lat, lon, api_key):
     url = f"http://api.openweathermap.org/data/2.5/air_pollution?lat={lat}&lon={lon}&appid={api_key}"
     data = requests.get(url).json()
     return data["list"][0]["main"]["aqi"]
-
 
 aqi_meaning = {
     1: "Good",

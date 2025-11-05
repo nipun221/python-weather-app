@@ -16,7 +16,6 @@ if not API_KEY:
     print("❌ ERROR: WEATHER_API_KEY is missing in .env file")
     sys.exit(1)
 
-
 def send_alert_email(city, aqi, meaning):
     if not SMTP_EMAIL or not SMTP_PASS:
         print("⚠️ Email alert skipped (SMTP details missing in .env)")
@@ -93,7 +92,6 @@ def main():
         send_alert_email(name, aqi, meaning)
     else:
         print("✅ AQI is safe. No alert sent.")
-
 
 if __name__ == "__main__":
     main()
