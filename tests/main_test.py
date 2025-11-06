@@ -1,5 +1,11 @@
+import os
+import pytest
 from unittest.mock import patch, MagicMock
 from main import send_alert_email
+
+@pytest.fixture(autouse=True)
+def fake_env():
+    os.environ["WEATHER_API_KEY"] = "TEST_KEY"
 
 @patch("main.smtplib.SMTP_SSL")
 def test_send_alert_email(mock_smtp):

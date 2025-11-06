@@ -12,7 +12,7 @@ SMTP_EMAIL = os.getenv("SMTP_EMAIL")
 SMTP_PASS = os.getenv("SMTP_PASS")
 ALERT_EMAIL_TO = os.getenv("ALERT_EMAIL_TO")
 
-if not API_KEY:
+if not API_KEY and __name__ == "__main__":
     print("❌ ERROR: WEATHER_API_KEY is missing in .env file")
     sys.exit(1)
 
