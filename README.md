@@ -1,4 +1,6 @@
 [![Weather + Aqi App Pipeline](https://github.com/nipun221/python-weather-app/actions/workflows/ci.yml/badge.svg)](https://github.com/nipun221/python-weather-app/actions/workflows/ci.yml)
+![GHCR version static](https://img.shields.io/badge/GHCR-weather--cli-blue?logo=docker&logoColor=white)
+![GHCR version dynamic](https://ghcr-badge.egpl.dev/nipun221/weather-cli/latest_tag)
 # WEATHER + AQI CLI APP
 
 ---
