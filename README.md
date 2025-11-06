@@ -9,8 +9,7 @@ It includes:
 * Retry logic (3 attempts) for API calls with delays
 * Full error handling (bad city, missing API key, network errors)
 * Sends a **detailed** email alert (Gmail SMTP) when AQI ≥ 4 (Poor/Very Poor) using your custom template
-* Uses `.env` for secrets (only dependency: `python-dotenv`)
-* No logs saved (you asked `Logs: no`)
+* Uses `.env` for secrets
 
 ---
 
