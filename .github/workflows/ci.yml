@@ -1,5 +1,9 @@
 name: Weather + Aqi App Pipeline
 
+permissions:
+  contents: read
+  packages: write
+
 on:
   push:
     branches: [main]
@@ -40,3 +44,29 @@ jobs:
         with:
           name: test-results
           path: .pytest_cache/
+
+  build-docker-push:
+    needs: build-test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: code checkout
+        uses: actions/checkout@v5
+
+      - name: login to github container registry
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GHCR_PAT }}
+
+      - name: build & push docker image
+        run: |
+          IMAGE_NAME=ghcr.io/${{ github.repository_owner }}/weather-cli
+          GIT_SHA=${{ github.sha }}
+
+          docker build -t $IMAGE_NAME:latest .
+          docker tag $IMAGE_NAME:latest $IMAGE_NAME:$GIT_SHA
+
+          docker push $IMAGE_NAME:latest
+          docker push $IMAGE_NAME:$GIT_SHA
