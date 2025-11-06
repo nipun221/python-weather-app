@@ -70,3 +70,10 @@ jobs:
 
           docker push $IMAGE_NAME:latest
           docker push $IMAGE_NAME:$GIT_SHA
+
+      - name: push semantic version
+        run: |
+          IMAGE=ghcr.io/${{ github.actor }}/weather-cli
+          VERSION=1.0.0
+          docker tag $IMAGE:latest $IMAGE:$VERSION
+          docker push $IMAGE:$VERSION
