@@ -1,5 +1,7 @@
 # WEATHER + AQI CLI APP
 [![Weather + Aqi App Pipeline](https://github.com/nipun221/python-weather-app/actions/workflows/ci.yml/badge.svg)](https://github.com/nipun221/python-weather-app/actions/workflows/ci.yml)
+![Docker Image Version](https://ghcr-badge.egpl.dev/nipun221/weather-cli/latest_tag)
+
 
 ---
 
