@@ -9,6 +9,9 @@ def fake_env():
 
 @patch("main.smtplib.SMTP_SSL")
 def test_send_alert_email(mock_smtp):
+    os.environ["SMTP_EMAIL"] = "test@example.com"
+    os.environ["SMTP_PASS"] = "fakepass"
+
     mock_server = MagicMock()
     mock_smtp.return_value.__enter__.return_value = mock_server
 
@@ -19,5 +22,5 @@ def test_send_alert_email(mock_smtp):
     send_alert_email(city, aqi, meaning)
 
     mock_smtp.assert_called_once_with("smtp.gmail.com", 465)
-    mock_server.login.assert_called()    # we don't check creds here for security
+    mock_server.login.assert_called_once_with("test@example.com", "fakepass")
     mock_server.send_message.assert_called_once()

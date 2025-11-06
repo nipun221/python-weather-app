@@ -8,8 +8,6 @@ from weather_utils import get_city_from_ip, get_weather, get_aqi, aqi_meaning, h
 load_dotenv()
 
 API_KEY = os.getenv("WEATHER_API_KEY")
-SMTP_EMAIL = os.getenv("SMTP_EMAIL")
-SMTP_PASS = os.getenv("SMTP_PASS")
 ALERT_EMAIL_TO = os.getenv("ALERT_EMAIL_TO")
 
 if not API_KEY and __name__ == "__main__":
@@ -17,6 +15,9 @@ if not API_KEY and __name__ == "__main__":
     sys.exit(1)
 
 def send_alert_email(city, aqi, meaning):
+    SMTP_EMAIL = os.getenv("SMTP_EMAIL")
+    SMTP_PASS = os.getenv("SMTP_PASS")
+
     if not SMTP_EMAIL or not SMTP_PASS:
         print("⚠️ Email alert skipped (SMTP details missing in .env)")
         return
