@@ -31,9 +31,9 @@ aqi_meaning = {
 }
 
 health_advice = {
-    1: "✅ Enjoy the fresh air!",
-    2: "🙂 Air is okay for most people.",
-    3: "😐 Sensitive groups should reduce outdoor time.",
-    4: "⚠️ Unhealthy! Limit outdoor exposure.",
-    5: "🚨 Very unhealthy! Stay indoors."
+    1: "Enjoy the fresh air!",
+    2: "Air is okay for most people.",
+    3: "Sensitive groups should reduce outdoor time.",
+    4: "Unhealthy! Limit outdoor exposure.",
+    5: "Very unhealthy! Stay indoors."
 }

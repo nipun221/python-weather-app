@@ -19,7 +19,7 @@ def send_alert_email(city, aqi, meaning):
     SMTP_PASS = os.getenv("SMTP_PASS")
 
     if not SMTP_EMAIL or not SMTP_PASS:
-        print("⚠️ Email alert skipped (SMTP details missing in .env)")
+        print("⚠ Email alert skipped (SMTP details missing in .env)")
         return
 
     msg = EmailMessage()
@@ -40,19 +40,19 @@ Recommendation: Avoid outdoor activity if possible.
         with smtplib.SMTP_SSL("smtp.gmail.com", 465) as smtp:
             smtp.login(SMTP_EMAIL, SMTP_PASS)
             smtp.send_message(msg)
-        print("📧 Email alert sent successfully!")
+        print("Email alert sent successfully!")
     except Exception as e:
         print(f"❌ Failed to send email: {e}")
 
 
 def main():
-    print("\n🌤️  Simple Weather & Air Quality Monitor")
+    print("\nSimple Weather & Air Quality Monitor")
     city = input("Enter city name (leave blank to auto-detect via IP): ").strip()
 
     if not city:
-        print("🌍 Detecting city via IP...")
+        print("Detecting city via IP...")
         city = get_city_from_ip() or "Zurich"
-        print(f"✅ Using city: {city}")
+        print(f"Using city: {city}")
 
     # Weather API
     weather_data = get_weather(city, API_KEY)
@@ -78,21 +78,21 @@ def main():
 
     # UI Output
     print("\n==============================================")
-    print(f"📍 City: {name}, {country}")
-    print(f"🌡️  Temperature: {temp}°C")
-    print(f"💧 Humidity: {humidity}% | 🌀 Wind: {wind} m/s")
-    print(f"🔎 Condition: {desc}")
+    print(f"City: {name}, {country}")
+    print(f"Temperature: {temp}°C")
+    print(f"Humidity: {humidity}% | Wind: {wind} m/s")
+    print(f"Condition: {desc}")
     print("----------------------------------------------")
-    print(f"🫁 AQI: {aqi} ({meaning})")
-    print(f"💡 Health Advice: {advice}")
+    print(f"AQI: {aqi} ({meaning})")
+    print(f"Health Advice: {advice}")
     print("==============================================\n")
 
     # Email alert if AQI ≥ 4
     if aqi >= 4:
-        print("⚠️ AQI is high! Sending alert email...")
+        print("⚠ AQI is high! Sending alert email...")
         send_alert_email(name, aqi, meaning)
     else:
-        print("✅ AQI is safe. No alert sent.")
+        print("AQI is safe. No alert sent.")
 
 if __name__ == "__main__":
     main()
