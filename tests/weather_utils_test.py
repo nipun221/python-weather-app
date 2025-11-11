@@ -41,8 +41,8 @@ def test_aqi_meaning_labels():
     assert aqi_meaning[5] == "Very Poor"
 
 def test_health_advice_labels():
-    assert health_advice[1] == "✅ Enjoy the fresh air!"
-    assert health_advice[2] == "🙂 Air is okay for most people."
-    assert health_advice[3] == "😐 Sensitive groups should reduce outdoor time."
-    assert health_advice[4] == "⚠️ Unhealthy! Limit outdoor exposure."
-    assert health_advice[5] == "🚨 Very unhealthy! Stay indoors."
+    assert health_advice[1] == "Enjoy the fresh air!"
+    assert health_advice[2] == "Air is okay for most people."
+    assert health_advice[3] == "Sensitive groups should reduce outdoor time."
+    assert health_advice[4] == "Unhealthy! Limit outdoor exposure."
+    assert health_advice[5] == "Very unhealthy! Stay indoors."
